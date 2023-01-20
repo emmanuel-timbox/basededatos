@@ -1,0 +1,348 @@
+-- MySQL dump 10.13  Distrib 8.0.31, for Linux (x86_64)
+--
+-- Host: 127.0.0.1    Database: vmasmas-timbrado
+-- ------------------------------------------------------
+-- Server version	8.0.31-0ubuntu0.20.04.2
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ar_internal_metadata`
+--
+
+DROP TABLE IF EXISTS `ar_internal_metadata`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ar_internal_metadata` (
+  `key` varchar(255) NOT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ar_internal_metadata`
+--
+
+LOCK TABLES `ar_internal_metadata` WRITE;
+/*!40000 ALTER TABLE `ar_internal_metadata` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ar_internal_metadata` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cat_tax_ranges`
+--
+
+DROP TABLE IF EXISTS `cat_tax_ranges`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cat_tax_ranges` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tax_type` varchar(3) NOT NULL,
+  `factor_type` varchar(10) NOT NULL,
+  `tax` varchar(4) NOT NULL,
+  `minimum_value` varchar(8) DEFAULT NULL,
+  `maximum_value` varchar(8) DEFAULT NULL,
+  `fixed_range` varchar(1) DEFAULT NULL,
+  `retention` tinyint NOT NULL,
+  `transfer` tinyint NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cat_tax_ranges`
+--
+
+LOCK TABLES `cat_tax_ranges` WRITE;
+/*!40000 ALTER TABLE `cat_tax_ranges` DISABLE KEYS */;
+INSERT INTO `cat_tax_ranges` VALUES (1,'002','Tasa','IVA','','0.000000','F',0,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(2,'002','Tasa','IVA','','0.160000','F',0,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(3,'002','Tasa','IVA','0.000000','0.160000','R',1,0,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(4,'003','Tasa','IEPS','','0.265000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(5,'003','Tasa','IEPS','','0.300000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(6,'003','Tasa','IEPS','','0.530000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(7,'003','Tasa','IEPS','','0.500000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(8,'003','Tasa','IEPS','','1.600000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(9,'003','Tasa','IEPS','','0.304000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(10,'003','Tasa','IEPS','','0.250000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(11,'003','Tasa','IEPS','','0.090000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(12,'003','Tasa','IEPS','','0.080000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(13,'003','Tasa','IEPS','','0.070000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(14,'003','Tasa','IEPS','','0.060000','F',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(15,'003','Tasa','IEPS','','0.030000','F',0,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(16,'003','Tasa','IEPS','','0.000000','F',0,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(17,'003','Cuota','IEPS','0.000000','43.77000','R',1,1,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(18,'001','Tasa','ISR','0.000000','0.350000','R',1,0,'2017-07-12 14:23:25','2017-07-12 14:23:25'),(19,'002','Tasa','IVA','','0.080000','F',0,1,'2019-02-11 20:28:56','2019-02-11 20:29:06');
+/*!40000 ALTER TABLE `cat_tax_ranges` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `certificates`
+--
+
+DROP TABLE IF EXISTS `certificates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `certificates` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `emitters_id` int NOT NULL,
+  `certificate_number` varchar(30) NOT NULL,
+  `identity` varchar(200) NOT NULL,
+  `verified_by` varchar(200) DEFAULT NULL,
+  `date_expiry` varchar(30) DEFAULT NULL,
+  `certificate_pem` text NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `certificates_emitters_id_fk` (`emitters_id`),
+  CONSTRAINT `certificates_emitters_id_fk` FOREIGN KEY (`emitters_id`) REFERENCES `emitters` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `certificates`
+--
+
+LOCK TABLES `certificates` WRITE;
+/*!40000 ALTER TABLE `certificates` DISABLE KEYS */;
+INSERT INTO `certificates` VALUES (1,1,'1234567777777','Prueba','SAT','12-02-2042','pem','prueba-slug',NULL,NULL);
+/*!40000 ALTER TABLE `certificates` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `concepts`
+--
+
+DROP TABLE IF EXISTS `concepts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `concepts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `product_key` varchar(20) NOT NULL,
+  `id_number` varchar(30) DEFAULT NULL,
+  `unit_key` varchar(30) NOT NULL,
+  `unit` varchar(40) DEFAULT NULL,
+  `description` text NOT NULL,
+  `tax_object` varchar(20) NOT NULL,
+  `status` int NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `concepts_users_id_fk` (`user_id`),
+  CONSTRAINT `concepts_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla donde se guardaran los conceptos preregistrado para el xml';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `concepts`
+--
+
+LOCK TABLES `concepts` WRITE;
+/*!40000 ALTER TABLE `concepts` DISABLE KEYS */;
+INSERT INTO `concepts` VALUES (1,1,'1233clave','1','unidad','','123','123',1,'QEVuQwEA9rGHnvTPRQqwY3+LFI1fOMB4kYYCi1MwJFn4MKlk3Lw=','2023-01-11 20:10:13','2023-01-18 19:10:40'),(2,1,'prueba1','123','123','123','123','123',0,'QEVuQwEA7WreXbIPGPA8XGPnWhiJF4XUFEvTkhE9nO67oDab8lA=','2023-01-11 20:11:58','2023-01-12 23:35:51');
+/*!40000 ALTER TABLE `concepts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `emitters`
+--
+
+DROP TABLE IF EXISTS `emitters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `emitters` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `bussiness_name` varchar(150) NOT NULL,
+  `rfc` varchar(15) NOT NULL,
+  `expedition_place` varchar(10) NOT NULL,
+  `tax_regime` varchar(20) NOT NULL,
+  `status` int NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `emitters_users_id_fk` (`user_id`),
+  CONSTRAINT `emitters_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla donde se guardan los emisores de comprobante (nodo cfdi:Emisor)';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `emitters`
+--
+
+LOCK TABLES `emitters` WRITE;
+/*!40000 ALTER TABLE `emitters` DISABLE KEYS */;
+INSERT INTO `emitters` VALUES (1,1,'Emmanuel SA de CV 3','ROHE960325MY5','76149','607',1,'QEVuQwEAPIHGxlhwD9X5eMSrZUOXwU34ih5UKN3zTTAIbXvwUM=','2022-12-29 02:54:53','2023-01-01 05:14:34'),(2,1,'Emmanuel 2 SA de CV','ROHE962503MY5','76148','610',0,'QEVuQwEAif2Qh1PyQr+fZgkd+xyd+z5h4Y0QAjhSi4lK+Soi5VI=','2022-12-29 03:14:36','2022-12-29 23:03:19'),(3,1,'Flavio Bocanegr','RFCDEPRUEB123','76123','603',1,'QEVuQwEAJpwPWvDen+hLrOcBkiCrnWaGuK99Ty7uGiJ8+8SRt+g=','2022-12-29 23:00:59','2023-01-01 05:14:32'),(4,1,'Prueba','12123456PRUEBA','12345','603',1,'QEVuQwEAJC7aIGmD+tAKMKavqP5grSy1P0rUSUejp0yD2AEallA=','2022-12-29 23:11:12','2023-01-01 05:14:30'),(5,1,'Katy update ','PRUEbas123423','12346','610',0,'QEVuQwEAdAKMyCgIdsylGhtBLrmUulgCYqaB8XxCLCFOQCbTzJM=','2023-01-05 15:58:18','2023-01-05 17:02:11'),(6,1,'Alexis 123','12354677765756','12345','601',1,'QEVuQwEA0on4k3UdUubs75NkNSoojziknteN416zk7IRITzTkEg=','2023-01-05 17:14:22','2023-01-05 17:14:55');
+/*!40000 ALTER TABLE `emitters` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `receivers`
+--
+
+DROP TABLE IF EXISTS `receivers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `receivers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `issuer_id` int NOT NULL,
+  `rfc` varchar(15) NOT NULL,
+  `bussiness_name` varchar(100) DEFAULT NULL,
+  `cfdi_use` varchar(10) NOT NULL,
+  `receiving_tax_domicile` varchar(16) DEFAULT NULL,
+  `recipient_tax_regimen` varchar(20) NOT NULL,
+  `tax_id_number` varchar(40) DEFAULT NULL,
+  `tax_residence` varchar(40) DEFAULT NULL,
+  `status` int NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `receivers_issuers_id_fk` (`issuer_id`),
+  CONSTRAINT `receivers_issuers_id_fk` FOREIGN KEY (`issuer_id`) REFERENCES `emitters` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tablas donde se guardan los receptores por emisor de xml';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `receivers`
+--
+
+LOCK TABLES `receivers` WRITE;
+/*!40000 ALTER TABLE `receivers` DISABLE KEYS */;
+INSERT INTO `receivers` VALUES (1,4,'1234562312RFC','Emmanuel','D04','12347','612','','',1,'QEVuQwEA4fznhSggL1jTVBWpCBOO5MWuhiUqq8b4GG62o96cqE=','2023-01-06 20:57:56','2023-01-06 21:21:12');
+/*!40000 ALTER TABLE `receivers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_migrations`
+--
+
+DROP TABLE IF EXISTS `schema_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `schema_migrations` (
+  `version` varchar(255) NOT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `schema_migrations`
+--
+
+LOCK TABLES `schema_migrations` WRITE;
+/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `taxes`
+--
+
+DROP TABLE IF EXISTS `taxes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `taxes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `tax_key` varchar(5) DEFAULT NULL,
+  `tax_name` varchar(50) NOT NULL,
+  `tax_rate` varchar(20) NOT NULL,
+  `status` int NOT NULL,
+  `slug` varchar(200) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `taxes_users_id_fk` (`user_id`),
+  CONSTRAINT `taxes_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `taxes`
+--
+
+LOCK TABLES `taxes` WRITE;
+/*!40000 ALTER TABLE `taxes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `taxes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `surname_first` varchar(100) NOT NULL,
+  `surname_second` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `status` int NOT NULL,
+  `slug` varchar(20) CHARACTER SET ucs2 COLLATE ucs2_general_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla donde se guardan los usuario que usaran el aplicativo';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Emmanuel Alvaro','Rodriguez','Hernandez','emmanuel.rodriguez@timbox.com.mx','1234567',1,'user-WFWSBBZOEXFS','2022-12-22 17:01:00','2022-12-22 17:01:04');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `xml_files`
+--
+
+DROP TABLE IF EXISTS `xml_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `xml_files` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `uuid` varchar(30) NOT NULL,
+  `pem_string` varchar(150) NOT NULL,
+  `slug` varchar(20) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `xml_files_users_id_fk` (`user_id`),
+  CONSTRAINT `xml_files_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla donde se guardan los xml timbrados';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `xml_files`
+--
+
+LOCK TABLES `xml_files` WRITE;
+/*!40000 ALTER TABLE `xml_files` DISABLE KEYS */;
+/*!40000 ALTER TABLE `xml_files` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-01-20 10:20:24
